@@ -1,12 +1,21 @@
 # Step toward visualizing the cycles and trees created by mapping n to f(n)
 
 def get_result(n,modulo):
-    n = 2*n + 1
+
+    n = n**2+1
+
+#    n = collatz(n)
 
     n = n % modulo
 
     return n
 
+
+def collatz(n):
+    if n % 2 == 0:
+        n = n//2
+    else:
+        n = (3*n + 1) // 2
 
 
 def get_gamut(q):
@@ -55,7 +64,7 @@ def analyse(f):
 
 
 if __name__ == "__main__":
-    q = 24
+    q = 14
 
     gamut = get_gamut(q)
 
